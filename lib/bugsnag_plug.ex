@@ -1,18 +1,13 @@
 defmodule BugsnagPlug do
   @moduledoc """
-  Documentation for BugsnagPlug.
+  Plug for error reporting to Bugsnag
   """
+
+  use Plug.ErrorHandler
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> BugsnagPlug.hello
-      :world
-
   """
-  def hello do
-    :world
+  @spec hanble_errors(any, any) :: any
+  def hanble_errors(conn, %{kind: _kind, reason: _reason, stack: _stack}) do
   end
 end
